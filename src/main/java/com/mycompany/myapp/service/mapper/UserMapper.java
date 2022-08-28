@@ -2,8 +2,8 @@ package com.mycompany.myapp.service.mapper;
 
 import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.User;
-import com.mycompany.myapp.service.dto.AdminUserDTO;
-import com.mycompany.myapp.service.dto.UserDTO;
+import com.mycompany.myapp.service.response.AdminUserDTO;
+import com.mycompany.myapp.service.response.UserDTO;
 import java.util.*;
 import java.util.stream.Collectors;
 import org.mapstruct.BeanMapping;

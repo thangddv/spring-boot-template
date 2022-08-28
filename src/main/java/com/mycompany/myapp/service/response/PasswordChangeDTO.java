@@ -1,4 +1,4 @@
-package com.mycompany.myapp.service.dto;
+package com.mycompany.myapp.service.response;
 
 /**
  * A DTO representing a password change required data - current and new password.

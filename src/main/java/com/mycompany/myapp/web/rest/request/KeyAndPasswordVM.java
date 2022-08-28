@@ -1,4 +1,4 @@
-package com.mycompany.myapp.web.rest.vm;
+package com.mycompany.myapp.web.rest.request;
 
 /**
  * View Model object for storing the user's key and password.

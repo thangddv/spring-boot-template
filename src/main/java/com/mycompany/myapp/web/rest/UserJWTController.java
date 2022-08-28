@@ -3,7 +3,7 @@ package com.mycompany.myapp.web.rest;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mycompany.myapp.security.jwt.JWTFilter;
 import com.mycompany.myapp.security.jwt.TokenProvider;
-import com.mycompany.myapp.web.rest.vm.LoginVM;
+import com.mycompany.myapp.web.rest.request.LoginVM;
 import javax.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

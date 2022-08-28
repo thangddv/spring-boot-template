@@ -3,8 +3,8 @@ package com.mycompany.myapp.service.mapper;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.mycompany.myapp.domain.User;
-import com.mycompany.myapp.service.dto.AdminUserDTO;
-import com.mycompany.myapp.service.dto.UserDTO;
+import com.mycompany.myapp.service.response.AdminUserDTO;
+import com.mycompany.myapp.service.response.UserDTO;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

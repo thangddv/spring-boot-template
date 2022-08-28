@@ -1,7 +1,7 @@
 package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.service.UserService;
-import com.mycompany.myapp.service.dto.UserDTO;
+import com.mycompany.myapp.service.response.UserDTO;
 import java.util.*;
 import java.util.Collections;
 import org.slf4j.Logger;

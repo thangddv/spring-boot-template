@@ -1,4 +1,4 @@
-package com.mycompany.myapp.web.rest.vm;
+package com.mycompany.myapp.web.rest.request;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
