@@ -9,6 +9,11 @@ import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.servlet.http.HttpServletRequest;
+
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -150,6 +155,10 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
     }
 
     @ExceptionHandler
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "400", description = "Bad request",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Problem.class)))
+    })
     public ResponseEntity<Problem> handleBadRequestAlertException(BadRequestAlertException ex, NativeWebRequest request) {
         return create(
             ex,

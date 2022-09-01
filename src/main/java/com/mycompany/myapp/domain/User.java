@@ -1,6 +1,7 @@
 package com.mycompany.myapp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mycompany.myapp.config.Constants;
 import java.io.Serializable;
 import java.time.Instant;
@@ -12,6 +13,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 
@@ -42,6 +45,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Size(max = 50)
     @Column(name = "first_name", length = 50)
+    @JsonProperty("first_name")
     private String firstName;
 
     @Size(max = 50)

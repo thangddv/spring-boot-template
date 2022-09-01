@@ -1,27 +1,8 @@
 package com.mycompany.myapp.service;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-
 import com.mycompany.myapp.IntegrationTest;
 import com.mycompany.myapp.config.Constants;
 import com.mycompany.myapp.domain.User;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.Properties;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -31,6 +12,27 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mail.MailSendException;
 import org.springframework.mail.javamail.JavaMailSender;
 import tech.jhipster.config.JHipsterProperties;
+
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 /**
  * Integration tests for {@link MailService}.
@@ -208,7 +210,7 @@ class MailServiceIT {
             URL resource = this.getClass().getClassLoader().getResource(propertyFilePath);
             File file = new File(new URI(resource.getFile()).getPath());
             Properties properties = new Properties();
-            properties.load(new InputStreamReader(new FileInputStream(file), Charset.forName("UTF-8")));
+            properties.load(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
 
             String emailTitle = (String) properties.get("email.test.title");
             assertThat(message.getSubject()).isEqualTo(emailTitle);
